@@ -16,8 +16,9 @@ import sys
 
 
 
-# linkedin_username = os.getenv('sikandar.javid@outlook.com')
-# linkedin_password = os.getenv('etc9uvk_')
+# Set up environment variables for credentials
+linkedin_username = os.getenv('LINKEDIN_USERNAME')
+linkedin_password = os.getenv('LINKEDIN_PASSWORD')
 
 
 company_name = sys.argv[1]
@@ -37,10 +38,10 @@ driver.maximize_window()
 
 #login to linkedin
 email_field = driver.find_element(By.ID, "username")
-email_field.send_keys('sikandar.javid@outlook.com')
+email_field.send_keys(linkedin_username)
 
 password_field = driver.find_element(By.ID, "password")
-password_field.send_keys('etc9uvk_')
+password_field.send_keys(linkedin_password)
 
 sign_in_button = driver.find_element(By.XPATH, "//button[@type='submit']")
 sign_in_button.click()

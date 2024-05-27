@@ -1,0 +1,2 @@
+Hi {connection_name}
+ Looking forward to connect with you 

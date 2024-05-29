@@ -13,12 +13,17 @@ from linkedin_message import message_to_recruiter
 
 import os
 import sys
+import time
+import random
 
 
 
 # Set up environment variables for credentials
-linkedin_username = os.getenv('LINKEDIN_USERNAME')
-linkedin_password = os.getenv('LINKEDIN_PASSWORD')
+# linkedin_username = os.getenv('LINKEDIN_USERNAME')
+# linkedin_password = os.getenv('LINKEDIN_PASSWORD')
+
+linkedin_username = 'sikandar.javid@outlook.com'
+linkedin_password = 'etc9uvk_'
 
 
 company_name = sys.argv[1]
@@ -58,6 +63,7 @@ except TimeoutException:
 
 #search people for every keyword
 for key in search_keywords:
+    
     keyword_search_field.send_keys(key)
     keyword_search_field.send_keys(Keys.ENTER)
     try:
@@ -72,6 +78,8 @@ for key in search_keywords:
     
     for button in connect_buttons:
         if "Connect" in button.get_attribute("innerHTML"):
+            delay = random.randint(5,20)
+            time.sleep(delay)
             sent_connection_counter += 1
             if(sent_connection_counter == Constants.TOTAL_CONNECTION):
                 exit
@@ -101,6 +109,7 @@ for key in search_keywords:
 
             send_button = driver.find_element(By.CSS_SELECTOR, "[aria-label='Send invitation']")
             send_button.click()
+            time.sleep(10)
             
 
 

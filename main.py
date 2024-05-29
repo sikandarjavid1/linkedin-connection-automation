@@ -22,8 +22,8 @@ import random
 # linkedin_username = os.getenv('LINKEDIN_USERNAME')
 # linkedin_password = os.getenv('LINKEDIN_PASSWORD')
 
-linkedin_username = 'sikandar.javid@outlook.com'
-linkedin_password = 'etc9uvk_'
+linkedin_username = ''
+linkedin_password = ''
 
 
 company_name = sys.argv[1]
